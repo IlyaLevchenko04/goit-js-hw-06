@@ -20,9 +20,12 @@ gallery.style.flexDirection = 'row';
 gallery.style.listStyle = 'none';
 gallery.style.gap = '10px';
 gallery.style.padding = '0';
-const li = images.forEach(image => {
-      gallery.insertAdjacentHTML('beforeend', `<li><img src="${image.url}" alt="${image.alt}" width = '100px'></li>`)
-});
+const arr = [];
+const li = images.map(({url, alt}) => {
+  return `<li><img src="${url}" alt="${alt}" width = '100px'></li>`;
+}).join('');
+
+gallery.insertAdjacentHTML('beforeend', li);
 
 
 

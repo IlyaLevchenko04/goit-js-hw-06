@@ -14,6 +14,7 @@ function click (event){
         info.password = password.value;
         console.log(info);
     }
+    event.currentTarget.reset();
 }
 
 form.addEventListener('submit', click)

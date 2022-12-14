@@ -7,6 +7,7 @@ const ingredients = [
   'Condiments',
 ];
 
+const arr = [];
 
 const list = document.querySelector('#ingredients');
 
@@ -14,12 +15,12 @@ const liEl = ingredients.map(ingredient => {
   const li = document.createElement('li');
   li.textContent = ingredient;
   li.classList.add('item');
-  list.append(li);
+  arr.push(li);
   return list;
  });
 
 
-
+list.append(...arr);
 console.log(liEl);
 
 
